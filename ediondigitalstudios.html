@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Edion Digital Studios is a professional modern tech company that helps businesses grow online,">
+  <meta name="author" content="Edmond Emma Etot">
+  <meta property="og:title" content="Edion Digital Studios">
+  <meta property="og:description"
+    content="Professional web solutions built for growth. Modern, fast and responsive websites.">
+  <meta property="og:type" content="website">
+  <title>Edion Digital Studios</title>
+  <style>
+    :root {
+      --bg: #040e31;
+      --bg-soft: #0c1020;
+      --primary: #6366f1;
+      --accent: #06b6d4;
+      --text: #f8fafc;
+      --muted: #9ca3af;
+      --card: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Manrope', Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(99, 102, 241, 0.25), transparent), radial-gradient(800px 400px at 10% 10%, rgba(6, 182, 212, 0.2), transparent), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 9, 15, 0.6);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 1280px;
+      margin: auto;
+      padding: 1.4rem, 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    nav li {
+      display: block;
+      padding: 14px 16px;
+    }
+
+    nav li:hover {
+      color: white;
+    }
+
+    nav h1 {
+      font-weight: 800;
+      letter-spacing: 0.6px;
+    }
+
+    .hero {
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 10rem 2rem 6rem;
+    }
+
+    .hero h2 {
+      font-weight: 800;
+      line-height: 1.05;
+      font-size: clamp(3rem, 7vw, 5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: var(--card);
+      border-radius: 999px;
+      font-weight: 700;
+      padding: 1rem 2.4rem;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #020617;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translate(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+
+    .trust {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 2rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      max-width: 1280px;
+      margin: auto;
+      padding: 8rem 2rem;
+    }
+
+    section h3 {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      font-weight: 800;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .service {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.2));
+      border: 1px solid var(--border);
+      border-radius: 1.8rem;
+      padding: 3rem;
+      transition: transform 0.3s ease;
+      margin-bottom: 10px;
+    }
+
+    .service:hover {
+      transform: translate(-10px);
+      cursor: pointer;
+    }
+
+    .service h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .service p {
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px 1fr));
+      gap: 2.5rem;
+      text-align: center;
+    }
+
+    .stat h5 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat p {
+      color: var(--muted);
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: grid;
+      gap: 1.3rem;
+    }
+
+    input,
+    textarea {
+      padding: 1.1rem 1.3rem;
+      border-radius: 1rem;
+      outline: none;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+    }
+
+    textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .service,
+    .btn {
+      will-change: transform;
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Company",
+      "name": "Edion Digital Studios",
+      "url":
+      "jobTitle": "Web Development",
+      "sameAs": [],
+      "knowsAbout": [
+      "Web Development",
+      "Website Design",
+      "Responsive Design",
+      "SEO Optimization"
+      ]
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>Edion Digital Studios</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Premium <span class="gradient">Web Experiences</span><br>for modern brands</h2>
+    <p>We help businesses and individuals stand out online through high-end designs, performances and clean
+      developments.</p>
+    <div class="cta">
+      <a href="#contact" class="btn primary">Start a Project</a>
+      <a href="#services" class="btn">View Services</a>
+    </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div>⚡ Fast & Optimized</div>
+    <div>💎 Premium Design</div>
+    <div>📱Fully Responsive</div>
+    <div>🔒 Secure & Reliable</div>
+  </div>
+
+  <section id="services">
+    <h3>What We Do!</h3>
+    <div class="services">
+      <div class="service">
+        <h4>Web Design</h4>
+        <p>High-end UI/UX design tailored to your brand and audience.</p>
+      </div>
+    </div>
+    <div class="service">
+      <h4>Web Development</h4>
+      <p>Modern, scalable and responsive websites built to perform.</p>
+    </div>
+    <div class="service">
+      <h4>Brand Websites</h4>
+      <p>Professional online presence that builds trust and converts.</p>
+    </div>
+    <div class="service">
+      <h4>Cyber-Security</h4>
+      <p>Professional online presence that builds trust and converts.</p>
+    </div>
+  </section>
+
+  <section id="work">
+    <h3>Impact</h3>
+    <div class="stats">
+      <div class="stat">
+        <h5>50+</h5>
+        <p>Projects Delivered</p>
+      </div>
+      <div class="stat">
+        <h5>99%</h5>
+        <p>Client Satisfaction</p>
+      </div>
+      <div class="stat">
+        <h5>5&starf;</h5>
+        <p>Client Ratings</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Let's Build Something Great For You!</h3>
+    <form action="https://formspree.io/f/mgoelykg">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Tell us about your project"></textarea>
+      <button class="btn primary">Send Message</button>
+    </form>
+  </section>
+  <footer>&copy; 2025 Edion Digital Studios</footer>
+
+  <script>
+    /* =========================
+          Smooth Scroll Navigation
+    ========================= */
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", e => {
+        const targetId = link.getAttribute("href");
+        if (targetId.length > 1) {
+          e.preventDefault();
+          document.querySelector(targetId).scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+
+    /* =========================
+       Active Nav Link on Scroll
+    ========================= */
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+      header.style.background =
+        window.scrollY > 50
+          ? "rgba(7,9,15,0.9)"
+          : "rgba(7,9,15,0.6)";
+    });
+
+
+    const counters = document.querySelectorAll(".stat h5");
+    let statsStarted = false;
+
+    function animateCounters() {
+      counters.forEach(counter => {
+        const target = counter.innerText.replace("+", "").replace("%", "");
+        if (isNaN(target)) return;
+
+        let count = 0;
+        const increment = target / 80;
+
+        const update = () => {
+          count += increment;
+          if (count < target) {
+            counter.innerText = Math.floor(count) + (counter.innerText.includes("+") ? "+" : "%");
+            requestAnimationFrame(update);
+          } else {
+            counter.innerText = counter.innerText.includes("+")
+              ? target + "+"
+              : target + "%";
+          }
+        };
+        update();
+      });
+    }
+
+    window.addEventListener("scroll", () => {
+      const workSection = document.querySelector("#work");
+      const sectionTop = workSection.getBoundingClientRect().top;
+
+      if (sectionTop < window.innerHeight && !statsStarted) {
+        animateCounters();
+        statsStarted = true;
+      }
+    });
+
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const button = form.querySelector("button");
+      button.innerText = "Sending...";
+      button.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" }
+        });
+
+        if (response.ok) {
+          form.reset();
+          button.innerText = "Message Sent ✓";
+          setTimeout(() => {
+            button.innerText = "Send Inquiry";
+            button.disabled = false;
+          }, 3000);
+        } else {
+          throw new Error("Submission failed");
+        }
+      } catch (error) {
+        button.innerText = "Error! Try Again";
+        button.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+
+  </html>
